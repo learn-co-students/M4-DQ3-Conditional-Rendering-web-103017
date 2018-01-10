@@ -1,6 +1,10 @@
 import React from 'react'
+// 
+class MenuBar extends React.Componenet {
 
-const MenuBar = (props) => {
+	constructor(props) {
+		super(props);
+	}
 
       /*
 
@@ -13,38 +17,21 @@ const MenuBar = (props) => {
 
       */
 
-
-	let handleClick = event => {
-		props.activateButton(event)
-		// console.log("Event", event);
-		console.log("Props", props.active);
-		console.log("target", event.target.id);
-		console.log("this", this);
-	}
-
-	let activeClass = (arg) => {
-
-		return props.active === arg ? "item active": "item"
-	}
-
-
 	return (
-
-      <div onClick={handleClick} className="ui four item menu">
-            <a className={activeClass("profile")}
- id="profile">
+      <div className="ui four item menu" onClick(this.handleClick)>
+            <a className="item active" id="profile">
             	<i className="user large icon"/>
             </a>
 
-            <a className={props.active === "photo" ? "item active": "item" } id="photo">
+            <a className="item" id="photo">
             	<i className="photo large icon"/>
             </a>
 
-            <a className={props.active === "cocktail" ? "item active": "item" } id="cocktail">
+            <a className="item" id="cocktail">
             	<i className="cocktail large icon"/>
             </a>
 
-            <a className={props.active === "pokemon" ? "item active": "item" } id="pokemon">
+            <a className="item" id="pokemon">
             	<i className=" themeisle large icon"/>
             </a>
       </div>
